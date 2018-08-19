@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo与Github搭建博客填坑指南(mac版)]]></title>
+    <url>%2F2018%2F08%2F19%2FHexo%E4%B8%8EGithub%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%A1%AB%E5%9D%91%E6%8C%87%E5%8D%97-mac%E7%89%88%2F</url>
+    <content type="text"><![CDATA[Hexo与Github搭建博客填坑指南(mac版) 人存在的价值就是折腾。 ——迅哥儿 前言今天想起写这篇Hexo搭建个人博客的文章完全是因为个人比较懒，之前折腾了好几次，但是因为太懒了，一直没有文章出来，所以来来回回重装了好几次hexo，终于在昨天又重新捣鼓了一天，把hexo的主题和其他乱七八糟的什么配置都搞定了。为了纪念自己昨天折腾的这么长时间，还是决定花一些时间来把自己搭建过程中遇到的问题记录一下，说不定以后还用的上呢，哈哈哈。 不过因为自己目前还在准备12月份的考研，没有太多的空余时间，所以相关的内容会逐步的根据我自己的空余时间去完善。网上关于这方面的资料也已经很多了，所以应该也没有人会等着我的，就当是自己随便写写了。]]></content>
+      <categories>
+        <category>写作</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[杀死比尔读后感]]></title>
     <url>%2F2018%2F08%2F18%2Fshasibier%2F</url>
     <content type="text"><![CDATA[哈哈哈哈哈哈哈哈哈哈您发就发了发开了房间]]></content>
