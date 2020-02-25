@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2020%2F02%2F16%2Fleargit-1%2F</url>
+    <content type="text"><![CDATA[知识框架Git 常用语句 设置Git 12$ git config --global user.name &quot;Your Name&quot;$ git config --global user.email &quot;email@example.com&quot; 将目录变成Git可以管理的仓库 1$ git init 把文件添加到仓库，可反复多次使用，添加多个文件； 1$ git add readme.txt 把文件提交到仓库 1$ git commit -m &quot;wrote a readme file&quot; 要随时掌握工作区的状态，使用git status命令。 如果git status告诉你有文件被修改过，用git diff可以查看修改内容。 如何进行版本回退？ 12$ git reset --hard HEAD^HEAD is now at e475afc add distributed 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。 如何理解暂存区的概念？ git checkout – file`可以丢弃工作区的修改 1$ git checkout -- readme.txt 用命令git reset HEAD可以把暂存区的修改撤销掉（unstage），重新放回工作区 1$ git reset HEAD readme.txt 从版本库中删除该文件，那就用命令git rm删掉，并且git commit 12$ git rm test.txt$ git commit -m &quot;remove test.txt&quot; 另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本： 1$ git checkout -- test.txt git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”。 远程仓库 根据GitHub的提示，在本地的learngit仓库下运行命令： 1$ git remote add origin git@github.com:michaelliao/learngit.git 下一步，就可以把本地库的所有内容推送到远程库上： 1$ git push -u origin master 把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。 由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。 从现在起，只要本地作了提交，就可以通过命令： 1$ git push origin master 用命令git clone克隆一个本地库： 1$ git clone git@github.com:michaelliao/gitskills.git 分支管理如何进行分支管理 我们创建dev分支，然后切换到dev分支： 1$ git checkout -b dev git checkout命令加上-b参数表示创建并切换，相当于以下两条命令： 12$ git branch dev$ git checkout dev 用git branch命令查看当前分支： 123$ git branch* dev master 切换回master分支： 1$ git checkout master 把dev分支的工作成果合并到master分支上： 1$ git merge dev git merge命令用于合并指定分支到当前分支。 合并完成后，就可以放心地删除dev分支了： 1$ git branch -d dev 创建并切换到新的dev分支，可以使用： 1$ git switch -c dev 直接切换到已有的master分支，可以使用： 1$ git switch master 如何解决分支冲突当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。 解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。 用git log --graph命令可以看到分支合并图。 分支管理策略通常，合并分支时，如果可能，Git会用Fast forward模式，但这种模式下，删除分支后，会丢掉分支信息。 如果要强制禁用Fast forward模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。 Git分支十分强大，在团队开发中应该充分应用。 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。 Bug修复修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除； 当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场； 在master分支上修复的bug，想要合并到当前dev分支，可以用git cherry-pick命令，把bug提交的修改“复制”到当前分支，避免重复劳动。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Python学习笔记（一）]]></title>
+    <url>%2F2020%2F02%2F13%2Flearnpython-1%2F</url>
+    <content type="text"><![CDATA[前言Python应该算是我一直以来都在学习的一门语言，但是一直没有学习得很到位。之前学习的时候也尝试过爬虫，尝试过Python的一些小项目，但是因为自己没有坚持下来，三天打鱼，两天晒网，所以基本上都是学完就忘。 这次决定将Python捡起来，也是因为2020年年初的这场新冠肺炎，不仅影响了全国人民的出行和生活，也对当前的短期就业市场产生了比较大的负面影响。在这样的背景下，萌生了利用这段时间将Python好好捡起来的想法。 既然决定做出来了，自然不能别人看笑话，最重要也是不能再延续以前的那种三天打鱼，两天晒网的懒散习惯。《诗经·大雅·荡》中有说：“靡不有初，鲜克有终。“将一件事善始善终，应该是一个比较好的习惯。 当然，这篇Python的学习笔记主要是将我学习的Python知识应用费曼学习法，用自己的话表达出来，加深我自己学习的记忆，同时也是为自己以后的回顾留下复习材料。当然，如果有朋友觉得有用的话，我也觉得非常荣幸。 话不多说，那我们就开始吧。 Python的应用场景知乎 学习Python都用来干嘛 列举了很多关于Python的有趣用法，但是基本上可以被以下几类包括：]]></content>
+      <categories>
+        <category>编程相关</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Love and Life]]></title>
     <url>%2F2019%2F07%2F02%2FLife%20and%20Love%2F</url>
     <content type="text"><![CDATA[If you don’t leave, I will be in life and death.]]></content>
